@@ -11,7 +11,7 @@ NAME = "ido's server"
 def time():
     """
     Returns the current time
-    :return: current_time - the time separated into hours, minutes and seconds
+    :return: current_time - the time in hours,minutes and seconds
     """
     time_and_date = datetime.now()
     current_time = time_and_date.strftime('%H:%M:%S')
@@ -21,7 +21,7 @@ def time():
 def rand():
     """
     Generates a random number between 1 and 10
-    :return: random_num - the random num
+    :return: random_num - the random number
     """
     random_num = random.randint(1, 10)
     return str(random_num)
@@ -45,7 +45,7 @@ def main():
                     elif request == 'Name':
                         sent_message = NAME
                     elif request == 'Exit':
-                        client_socket.send('You were disconnected'.encode())
+                        client_socket.send('You were disconnected from the server'.encode())
                         break
                     else:
                         sent_message = 'not a valid command'
