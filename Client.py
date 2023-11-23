@@ -1,3 +1,4 @@
+#written by Ido
 import socket
 
 MAX_PACKET = 1024
@@ -9,7 +10,7 @@ def command(message):
     checks to see if message is a valid command
     :param message: the command the user has entered
     :type: string
-    :return: if the message is a command then it will return the message and if it isn't it will return "'ot valid'
+    :return: if the message is a command then it will return the message and if it isn't it will return 'not valid'
     """
     if message not in commands:
         message = 'not valid'
@@ -22,7 +23,7 @@ def main():
     try:
         my_socket.connect(('127.0.0.1', 1729))
         while True:
-            message = input("Enter command")
+            message = input("Enter command:")
             message = command(message)
             if message != 'not valid':
                 my_socket.send(message.encode())
